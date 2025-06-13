@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscapé 3.0</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="Icons/Icon_Aba.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f1f1f1;
+      color: #111;
+    }
+
+    header {
+      background-color: #2d2f36;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 80%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .search-bar i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .banners {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
+    }
+
+    .banner {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .highlight {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .stores, .products {
+      margin: 1rem;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .stores-list, .product-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      margin: auto;
+    }
+
+    .store, .product {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 0.5rem;
+      min-width: 150px;
+      text-align: center;
+    }
+    .products{
+        background-color: #c0c0c0;
+    
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #2d2f36;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    header#titulo_login{
+        color: antiquewhite;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="" style="text-decoration: none;">
+    <div class="logo">Buscapé</div>
+    </a>
+    <div class="search-bar">
+      <input type="text" placeholder="Digite sua busca..." id="TextBusca">
+      <i class="fas fa-search" onclick="alert('Pesquisando...')"></i>
+    </div>
+    <nav>
+      <a href="LoginPage.html">Ofertas</a>
+      <a href="LoginPage.html">Cashback</a>
+      <a href="LoginPage.html">Entrar</a>
+    </nav>
+  </header>
+
+  <section class="banners">
+    <div class="banner" style="background-color: #fdb3e7;">
+      <div class="highlight">Até 40% OFF pelo aplicativo</div>
+      <img src="IMGs/CashBack_Img.png" style="width: 100%;">
+      <p><strong>+ Cashback exclusivo!</strong></p>
+    </div>
+    <div class="banner">
+      <p class="highlight">Equipamentos de áudio com <strong>10% OFF</strong></p>
+      <img src="IMGs/Fone_Propaganda.png" alt="imagem Fone_Propaganda">
+      <button onclick="alert('Faça o Login')">Aproveite</button>
+    </div>
+  </section>
+
+  <section class="stores">
+    <h2 style="text-align: center;">Compare preços e aproveite o melhor cashback em vários produtos!</h2>
+    <div class="stores-list">
+      <a href="https://www.magazineluiza.com.br/">
+      <div class="store"><img src="IMGs/Circle_Magalu.png"><br>12%</div>
+      </a>
+      <a href="https://www.casasbahia.com.br/">
+      <div class="store"><img src="IMGs/Circle_C_Bahia.png"><br>10%</div>
+      </a>
+      <a href="https://www.amazon.com.br/">
+      <div class="store"><img src="IMGs/Circle_Amazon.png"><br>21%</div>
+      </a>
+      <a href="https://www.kabum.com.br/">
+      <div class="store"><img src="IMGs/Circle_Kabum.png"><br>5%</div>
+      </a>
+      <a href="https://shopee.com.br/">
+      <div class="store"><img src="IMGs/Circle_Shope.png"><br>0.5%</div>
+      </a>
+      <a href="https://www.boticario.com.br/">
+      <div class="store"><img src="IMGs/Circle_Boticario.png"><br>5%</div>
+      </a>
+      <a href="https://www.paguemenos.com.br/">
+      <div class="store"><img src="IMGs/Circle_PagueMenos.png"><br>1%</div>
+      </a>
+      <a href="https://www.nike.com/">
+      <div class="store"><img src="IMGs/Circle_Nike.png"><br>8%</div>
+      </a>
+      <a href="https://www.eudora.com.br/">
+      <div class="store"><img src="IMGs/Circle_Eudora.png"><br>4%</div>
+      </a>
+      <a href="https://www.pontofrio.com.br/">
+      <div class="store"><img src="IMGs/Circle_Ponto.png"><br>12%</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Encontre a melhor oferta de instrumentos musicais com nosso Alerta de Preço!</h2>
+    <div class="product-list">
+      <div class="product">
+        <div class="highlight">Desconto de (11%)</div>
+        <a href="PagProduto.html">
+        <img src="IMGs/V_Stage_88.png" style="width: 10%px;">
+        <a href=""></a>
+        <p>Roland V Stage 88</p>
+        <strong>R$ 14.000,00</strong>
+      </div>
+      <div class="product">
+        <div class="highlight">Desconto de (4%)</div>
+        <img src="IMGs/Roland_LX_09.png" alt="Produto" onclick="alert('Produto esgotado nas lojas parceiras!')"
+        style="cursor: pointer;">
+        <p>Piano Roland LX 09</p>
+        <strong>R$ 15.699,10</strong>
+      </div>
+      <div class="product">
+        <div class="highlight">Desconto de (7%)</div>
+        <img src="IMGs/Roland_GP_09.png" alt="Produto" onclick="alert('Produto esgotado nas lojas parceiras!')" 
+        style="cursor: pointer;">
+        <p>Roland GP 09</p>
+        <strong>R$ 25.499,00</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; Erison Queiroz.
+  </footer>
+
+  <script>
+    // Simular busca
+  
+    document.querySelector('.search-bar input').addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        alert('Buscando por: ' + e.target.value);
+      }
+    });
+
+    // Simular clique nas lojas
+    document.querySelectorAll('.store').forEach(store => {
+      store.addEventListener('click', () => {
+        alert('Filtrando ofertas de: ' + store.textContent);
+      });
+    });
+
+    // Simular clique nos produtos
+    document.querySelectorAll('.product').forEach(prod => {
+      prod.addEventListener('click', () => {
+        alert('Visualizando: ' + prod.querySelector('p').textContent);
+      });
+    });
+  </script>
+</body>
+</html>

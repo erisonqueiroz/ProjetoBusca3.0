@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Buscapé 3.0</title>
+    <link rel="stylesheet" href="CSS/style_Login.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="Icons/Icon_Aba.png">
+</head>
+<body>
+    <style>
+body{
+    background-color: rgb(61, 61, 61);
+}
+header#titulo_login{
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+section.windowLogin{
+    margin: auto;
+    width: 50%;
+    height: 40%;
+    padding: 20px;
+    background-color: rgb(153, 153, 153);
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px 3px;
+}
+.copy{
+    text-align: center;
+    font-size: 20px;
+    color: antiquewhite;
+}
+input{
+    margin: auto;
+    margin-top: 8px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+}
+div.inputsLg{
+   /* background-color: antiquewhite;*/
+    text-align: center;
+    padding: 5px;
+}
+a{
+    color:rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    padding: 8px;
+}
+input#Login{
+    background-color: RGB(255, 197, 0);
+}
+#btnEntrar{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #eede00;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#btnEntrar:hover{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+div.optionsLogin a{
+    text-decoration: none;
+}
+.cad{
+    transition: 0.5;
+}
+.cad:hover{
+    color: #eede00;
+}
+.forget{
+    transition: 0.5;
+}
+.forget:hover{
+    color: #eede00;
+}
+    </style>
+    <header id="titulo_login">
+        <h1>Login Busca 3.0</h1>
+    </header>
+    <section class="windowLogin">
+        <div class="inputsLg">
+            <div>
+                <input type="email" placeholder="Insira seu email" id="emailInput">
+            </div>
+            <div>
+                <input type="password" placeholder="Senha" id="pass">
+            </div>
+            <div>
+                <button id="btnEntrar" onclick="verificar()">Entrar</button>
+            </div>   
+            <div class="optionsLogin"> 
+                <a href="LoginPage.html" class="cad" onclick="alert('Serviço não está funcionando no momento.')">Cadastre-se</a>
+                <a href="LoginPage.html" class="forget" onclick="alert('Serviço não está funcionando no momento.')">Esqueci a senha</a>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </section>
+    <p class="copy">&copy; Erison Queiroz</p>
+    <script>
+        function verificar(){
+        const usuario = document.getElementById('emailInput').value;
+        const senha = document.getElementById('pass').value;
+        if (usuario === "admin" && senha === "1234") {
+        // Condição de redirecionamento
+        window.location.href = "index.html";
+        alert('Bem vindo, aproveite as ofertas!!!');
+      } else {
+        //Mensagem de erro
+        alert('Usuário ou senha incorretos!');
+      }
+    }
+    </script>
+</body>
+</html>
