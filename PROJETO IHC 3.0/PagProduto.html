@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Produto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="Icons/Icon_Aba.png">
+</head>
+<body>
+    <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+    }
+    i {
+        margin-right: 5px;
+    }
+    input{
+        box-sizing: border-box;
+    }
+    ul{
+        padding: 0;
+    }
+    header {
+      background-color: #2d2f36;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 80%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .search-bar i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .container{
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .product-details{
+      /*display: flex;*/
+      gap: 40px;
+    }
+
+    /*Imagens do produto*/
+    .product-galery{
+      flex: 1;
+    } 
+    .product-galery img{
+      border-radius: 10px;
+      width: 100%;
+    }
+    .galery-thumbnails{
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .galery-thumbnails img{
+      width: 60px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.5s;
+    }
+    .galery-thumbnails img:hover{
+      border: 2px solid #ffa500;
+    }
+    /*Informações do produto*/
+    .product-info{
+      flex: 1;
+    }
+    .product-path .product-code{
+      font-size: 9.rem;
+      color: #2d2f36;
+      margin-bottom: 10px;
+    }
+    .product-info h2{
+      color: #e0e0e0;
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+    .price{
+      font-size: 2rem;
+      color: #ffa500;
+      margin: 10px 0;
+    }
+    .rating{
+      color: #ffcc00;
+      font-size: 1.2rem;
+    }
+    .product-description{
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /*Opções do produto*/
+    #color, #quantity{
+      width: 100px;
+    }
+    .product-options{
+      margin: 20px 0;
+    }
+    .product-options label{
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .product-options select, .product-options input{
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+    /*Estilo dos Botões*/
+    .buttons{
+      display: flex;
+      gap: 15px;
+    }
+    .add-to-cart, .add-to-wishlist{
+      padding: 15px 30px;
+      background-color: #1e1e1e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.5s;
+    }
+    .add-to-cart:hover{
+      background-color: #388e3c;
+    }
+    .add-to-wishlist{
+      background-color: #1e1e1e;
+    }
+    .add-to-wishlist:hover{
+      background-color: #ffa500;
+      color: #1e1e1e;
+    }
+    .delivery{
+      margin-top: 20px;
+      color: #777;
+      color:#1e1e1e;
+    }
+    /* TABS */
+    .product-specs{
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .tabs{
+      display: flex;
+      gap: 30px;
+      list-style-type: none;
+      border-bottom: 2px solid rgb(207, 207, 207);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .tabs li{
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .specs-content p{
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    footer{
+      align-items: center;
+      background-color: #2d2f36;
+      text-align: center;
+      color: antiquewhite;
+      padding: 20px;
+      font-size: 1.0rem;
+      cursor: pointer;
+      transition: 1s;
+    }
+    footer:hover{
+      background-color: antiquewhite;
+      color: #2d2f36;
+      font-weight: bold;
+    }
+    @media (max-width: 1024px){
+        .product-details{
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 425px){
+      .buttons{
+        flex-direction: column;
+      }
+      .tabs li{
+        font-size: 0.8rem;
+      }
+    }
+    </style>   
+     <header>
+    <a href="index.html" style="text-decoration: none;">
+    <div class="logo">Buscapé</div>
+    </a>
+    <div class="search-bar">
+      <input type="text" placeholder="Digite sua busca..." id="TextBusca">
+      <i class="fas fa-search" onclick="alert('Pesquisando...')"></i>
+    </div>
+    <nav>
+      <a href="LoginPage.html">Ofertas</a>
+      <a href="LoginPage.html">Cashback</a>
+      <a href="LoginPage.html">Entrar</a>
+    </nav>
+  </header>
+     <main class="container">
+        <div class="product-details">
+            <!--IMAGEM DO PRODUTO-->
+            <div class="product-galery"></div>
+            <img src="IMGs/V_Stage_88.png" alt="Produto V Stage 88" width="60%">
+            <div class="galery-thumbnails">
+                <img src="IMGs/VStage2.png" alt="img_01" style="width: 15%;">
+                <img src="IMGs/VStage3.png" alt="img_02" style="width: 15%;">
+                <img src="IMGs/VStage4.png" alt="img_03" style="width: 15%;">
+            </div>
+            <!--INFORMAÇÕES DO PRODUTO-->
+            <div class="product-info"></div>
+            <p class="product-path">
+                <i class="fas fa-chevron-right"></i> Instrumentos / teclados / Roland
+                <h2>Teclado Roland V Stage 88 - Preto / Vermelho</h2>
+                <p class="product-code">Código do produto: 8B2HID210X</p>
+                <p class="price">R$ 14.000,00</p>
+                <p class="rating"></p>
+                <i class="fas fa-star" style="color: #ffa500;"></i>
+                <i class="fas fa-star" style="color: #ffa500;"></i>
+                <i class="fas fa-star" style="color: #ffa500;"></i>
+                <i class="fas fa-star" style="color: #ffa500;"></i>
+                <i class="fas fa-star-half-alt" style="color: #ffa500;"></i>
+                9 avaliações
+            </p>
+            <p class="product-description">
+               O Roland V-Stage 88 une teclas com ação de martelo, sons premium e tecnologia SuperNATURAL. Perfeito para palco e estúdio, oferece performance profissional com leveza e versatilidade incomparáveis.
+            </p>
+            <div class="product-options">
+                <label for="fonte">Fonte:</label>
+                <select name="fonte" id="fonte">
+                    <option value="220V">220V</option>
+                    <option value="110V">110V</option>
+                </select>
+            </div>
+            <button class="add-to-cart">Adicionar ao carrinho
+              <i class="fas fa-shopping-cart"></i>
+            </button>
+            
+            
+            <button class="add-to-wishlist">Adicionar a lista de desejos <i class="fas fa-heart"></i></button>
+            <p class="delivery">
+              <i class="fas fa-truck"></i>
+                Para ter uma estimativa de entrega consulte nossos termos e condições.
+            </p>    
+            
+        </div>
+        <div class="product-specs">
+          <ul class="tabs">
+            <li><i class="fas fa-info-circle"></i>Detalhes</li>
+            <li><i class="fas fa-undo"></i>Entrega</li>
+            <li><i class="fas fa-shipping-fast"></i>Sobre</li>
+
+          </ul>
+          <div class="specs-content">
+            <div>
+              <P><strong>Material externo:</strong>Plástico/Metal/Borracha</P>
+              <P><strong>Tipo de equipamento:</strong>Piano Digital</P>
+            </div>
+          </div>
+        </div>
+     </main>
+     <footer>&copy;Erison Queiroz</footer>
+</body>
+</html>
